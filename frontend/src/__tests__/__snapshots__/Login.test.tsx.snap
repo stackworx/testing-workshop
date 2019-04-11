@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "padding": 20,
+    }
+  }
+>
+  <form
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    Email:
+    <input
+      name="email"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="email"
+      value=""
+    />
+     
+    <br />
+    <br />
+    Password:
+    <input
+      name="password"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+    <br />
+    <br />
+    <button
+      disabled={false}
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

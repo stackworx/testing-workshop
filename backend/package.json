@@ -1,0 +1,53 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@stackworx/graphql": "^0.0.17",
+    "apollo-server-core": "^2.4.8",
+    "apollo-server-express": "^2.4.8",
+    "body-parser": "^1.18.3",
+    "convict": "^4.4.1",
+    "express": "^4.16.4",
+    "graphql": "^14.2.1",
+    "graphql-relay": "^0.6.0",
+    "join-monster": "^2.1.0",
+    "knex": "^0.16.3",
+    "objection": "^1.6.7",
+    "pg": "^7.9.0",
+    "pg-escape": "^0.2.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "always",
+    "bracketSpacing": false
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "exec": "ts-node --files src/commands/express.ts",
+    "ext": "js,ts"
+  },
+  "scripts": {
+    "migrate": "yarn knex migrate:latest",
+    "rollback": "yarn knex migrate:rollback",
+    "seed": "KNEX_SEED=true yarn knex seed:run",
+    "prettier": "prettier --write \"./src/**/*.{tsx,ts,js}\"",
+    "knex": "ts-node --files node_modules/knex/bin/cli.js",
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "@types/convict": "^4.2.1",
+    "@types/graphql": "^14.2.0",
+    "@types/graphql-relay": "^0.4.9",
+    "@types/jest": "^24.0.11",
+    "@types/knex": "^0.16.1",
+    "@types/pg": "^7.4.14",
+    "jest": "^24.7.1",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.3"
+  }
+}
