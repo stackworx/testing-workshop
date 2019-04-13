@@ -22,7 +22,7 @@ const query = new GraphQLObjectType({
       type: PersonConnection,
       sqlPaginate: true,
       orderBy: {
-        firstname: 'asc',
+        first_name: 'asc',
       },
       resolve: dbCall,
     },

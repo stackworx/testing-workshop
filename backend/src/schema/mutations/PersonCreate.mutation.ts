@@ -30,7 +30,8 @@ export default mutationWithClientMutationId({
     info: GraphQLResolveInfo
   ) => {
     const data = transformGlobalIds(rawData, info);
-    await PersonService.create(data);
-    return {personId: data.personId};
+    const {id: personId} = await PersonService.create(data);
+    console.log(personId);
+    return {personId};
   },
 });

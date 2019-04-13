@@ -5,6 +5,7 @@ import {knex} from '../db';
 Model.knex(knex);
 
 export class Person extends Model {
+  public id!: string;
   public firstName!: string;
   public lastName!: string;
   public email!: string;
@@ -19,8 +20,8 @@ export class Person extends Model {
         relation: Model.HasManyRelation,
         modelClass: Person,
         join: {
-          from: 'persons.id',
-          to: 'persons.parentId',
+          from: 'person.id',
+          to: 'person.parentId',
         },
       },
     };

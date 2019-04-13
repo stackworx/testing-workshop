@@ -20,7 +20,7 @@ export const Person = new GraphQLObjectType({
     fullName: {
       type: new GraphQLNonNull(GraphQLString),
       sqlDeps: ['first_name', 'last_name'],
-      resolve: () => null,
+      resolve: (parent) => `${parent.first_name} ${parent.last_name}`,
     },
     email: {
       type: new GraphQLNonNull(GraphQLString),
